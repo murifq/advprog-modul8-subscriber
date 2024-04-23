@@ -10,3 +10,8 @@ amqp adalah standar untuk menyampaikan pesan antara aplikasi atau organisasi. aq
 # Simulation Slow Subscriber
 ![img.png](images/SimulationSlowSubscriber.png)
 Saya mencoba mensimulasikan slow subscriber dengan menambahkan thread sleep pada subscriber. Saya mencoba untuk membuat 1 subscriber dan 2 publisher. Pada kasus saya, saya menghasilkan 6 _queue messages_. Hal tersebut karena Publisher sudah mengirim data kepada RabbitMQ, tetapi Subscriber lama untuk menerimanya karena sleep. Sehingga, terjadi 6 _queue messages_.
+
+#  Running three subscribers and five publishers
+![img.png](images/ThreeSubscribersFivePublishersRabbitMQ.png)
+![img.png](images/ThreeSubscribersFivePublishersTerminals.png)
+Saya mencoba untuk menjalankan tiga slow subscribers dan 5 publishers. Dapat dilihat bahwa penururan _messages queue_ nya jauh lebih cepat dibandingkan sebelumnya. Hal tersebut karena Publisher langsung mengirimkan data ke semua Subscribersnya dan jumlah subscribersnya pun bertambah. Sehingga penurunannya jauh lebih cepat.
